@@ -1,8 +1,7 @@
 //====== Copyright Valve Corporation, All rights reserved. =======
 
 
-#include "openvroverlaycontroller.h"
-
+#include "../../src/openvroverlaycontroller.h"
 
 #include <QOpenGLFramebufferObjectFormat>
 #include <QOpenGLPaintDevice>

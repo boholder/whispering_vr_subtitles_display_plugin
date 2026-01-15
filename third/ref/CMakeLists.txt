@@ -11,11 +11,11 @@ endif()
 
 add_executable(${TARGET_NAME}
   ${SHARED_SRC_FILES}
-  main.cpp
-  openvroverlaycontroller.cpp
-  openvroverlaycontroller.h
-  overlaywidget.cpp
-  overlaywidget.h
+        main.cpp
+        openvroverlaycontroller.cpp
+        openvroverlaycontroller.h
+        overlaywidget.cpp
+        overlaywidget.h
 )
 
 add_definitions(${QT_DEFINITIONS})

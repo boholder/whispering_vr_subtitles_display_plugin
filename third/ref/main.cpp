@@ -1,5 +1,5 @@
-#include "overlaywidget.h"
-#include "openvroverlaycontroller.h"
+#include "../../src/overlaywidget.h"
+#include "../../src/openvroverlaycontroller.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
