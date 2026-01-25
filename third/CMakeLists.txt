@@ -11,3 +11,10 @@ add_library(rawdraw INTERFACE)
 set_target_properties(rawdraw PROPERTIES
         INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/rawdraw"
 )
+
+add_library(spdlog SHARED IMPORTED GLOBAL)
+set(SPDLOG_DIR "${CMAKE_CURRENT_SOURCE_DIR}/spdlog")
+set_target_properties(spdlog PROPERTIES
+        IMPORTED_IMPLIB "${SPDLOG_DIR}/libspdlog.a"
+        INTERFACE_INCLUDE_DIRECTORIES "${SPDLOG_DIR}/include"
+)

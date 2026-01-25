@@ -14,6 +14,9 @@ int HandleDestroy()
 
 #include "openvr.h"
 
+// logger
+#include "spdlog/spdlog.h"
+
 int main()
 {
     CNFGSetup( "Whispering VR Subtitles Display", -256, -256 );
@@ -23,8 +26,8 @@ int main()
         vr::IVRSystem* pVRSystem = vr::VR_Init( &ierr, vr::VRApplication_Overlay );
         if ( !pVRSystem )
         {
-            printf( "Could not initialize OpenVR" );
-            return -5;
+            spdlog::error( "Could not initialize OpenVR: {}", vr::VR_GetVRInitErrorAsEnglishDescription( ierr ) );
+            return 1;
         }
     }
 

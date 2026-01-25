@@ -14,4 +14,5 @@ target_link_libraries(${TNAME}
         PRIVATE opengl32
         PRIVATE openvr_api
         PRIVATE rawdraw
+        PRIVATE spdlog
 )
