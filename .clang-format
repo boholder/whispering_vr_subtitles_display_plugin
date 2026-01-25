@@ -96,9 +96,10 @@ SpacesBeforeTrailingComments: 1
 SpacesInAngles:  false
 SpacesInContainerLiterals: true
 SpacesInCStyleCastParentheses: true
-SpacesInParentheses: true
+SpacesInParentheses: false
 SpacesInSquareBrackets: false
 Standard:        c++20
 TabWidth:        4
 UseTab:          Never
+InsertNewlineAtEOF: true
 ...

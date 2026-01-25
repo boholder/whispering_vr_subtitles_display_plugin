@@ -1,0 +1,12 @@
+#ifndef WHISPERING_VR_SUBTITLES_DISPLAY_PLUGIN_OVERLAY_H
+#define WHISPERING_VR_SUBTITLES_DISPLAY_PLUGIN_OVERLAY_H
+
+void init();
+
+class overlay
+{
+public:
+    static void init();
+};
+
+#endif // WHISPERING_VR_SUBTITLES_DISPLAY_PLUGIN_OVERLAY_H

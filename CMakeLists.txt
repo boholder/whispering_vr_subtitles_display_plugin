@@ -6,7 +6,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 project(whispering_vr_subtitles_display_plugin VERSION 0.1)
 
 set(TNAME whispering_vr_plugin)
-add_executable(${TNAME} src/main.cpp)
+add_executable(${TNAME}
+        src/main.cpp
+        src/overlay.cpp
+        src/overlay.h
+)
 
 add_subdirectory(third)
 
