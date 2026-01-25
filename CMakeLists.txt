@@ -5,16 +5,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 project(whispering_vr_subtitles_display_plugin VERSION 0.1)
 
-# build
-set(TARGET_NAME whispering_vr_plugin)
-set(SOURCE_FILES src/main.cpp)
-add_executable(${TARGET_NAME} ${SOURCE_FILES})
+set(TNAME whispering_vr_plugin)
+add_executable(${TNAME} src/main.cpp)
 
-target_link_libraries(${TARGET_NAME}
+add_subdirectory(third)
+
+target_link_libraries(${TNAME}
         PRIVATE opengl32
-)
-
-target_include_directories(${TARGET_NAME}
-        PRIVATE third/rawdraw
-        PRIVATE third/openvr/headers
+        PRIVATE openvr_api
+        PRIVATE rawdraw
 )

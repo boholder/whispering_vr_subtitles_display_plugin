@@ -12,9 +12,22 @@ void HandleMotion( int x, int y, int mask ) {}
 int HandleDestroy()
 { return 0; }
 
+#include "openvr.h"
+
 int main()
 {
-    CNFGSetup( "Example App", 256, 256 );
+    CNFGSetup( "Whispering VR Subtitles Display", -256, -256 );
+
+    {
+        vr::EVRInitError ierr;
+        vr::IVRSystem* pVRSystem = vr::VR_Init( &ierr, vr::VRApplication_Overlay );
+        if ( !pVRSystem )
+        {
+            printf( "Could not initialize OpenVR" );
+            return -5;
+        }
+    }
+
     while ( CNFGHandleInput() )
     {
         CNFGBGColor = 0x000080ff; // Dark Blue Background
