@@ -1,6 +1,8 @@
 // Make it so we don't need to include any other C files in our build.
 #define CNFG_IMPLEMENTATION
 
+// Include CNFG (rawdraw) for generating a window and/or OpenGL context.
+#define CNFGOGL
 #include "rawdraw_sf.h"
 
 void HandleKey( int keycode, int bDown ) {}
