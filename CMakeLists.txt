@@ -9,9 +9,12 @@ project(whispering_vr_subtitles_display_plugin VERSION 0.1)
 set(TARGET_NAME whispering_vr_plugin)
 set(SOURCE_FILES src/main.cpp)
 add_executable(${TARGET_NAME} ${SOURCE_FILES})
-target_include_directories(${TARGET_NAME}
-        PRIVATE third
-)
+
 target_link_libraries(${TARGET_NAME}
         PRIVATE opengl32
+)
+
+target_include_directories(${TARGET_NAME}
+        PRIVATE third/rawdraw
+        PRIVATE third/openvr/headers
 )
