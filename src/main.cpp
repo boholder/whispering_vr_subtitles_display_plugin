@@ -1,3 +1,4 @@
+// ReSharper disable CppParameterNeverUsed
 // Get all of rawdraw
 #define CNFG_IMPLEMENTATION
 // Let CNFG uses opengl
@@ -22,11 +23,10 @@ int main()
     CNFGSetup( "Whispering VR Subtitles Display", -256, -256 );
 
     {
-        vr::EVRInitError ierr;
-        vr::IVRSystem* pVRSystem = vr::VR_Init( &ierr, vr::VRApplication_Overlay );
-        if ( !pVRSystem )
+        vr::HmdError hmd_err;
+        if ( const vr::IVRSystem* vr_system = vr::VR_Init( &hmd_err, vr::VRApplication_Overlay ); !vr_system )
         {
-            spdlog::error( "Could not initialize OpenVR: {}", vr::VR_GetVRInitErrorAsEnglishDescription( ierr ) );
+            spdlog::error( "Could not initialize OpenVR: {}", vr::VR_GetVRInitErrorAsEnglishDescription( hmd_err ) );
             return 1;
         }
     }
@@ -43,7 +43,7 @@ int main()
         CNFGPenY = 1;
         CNFGDrawText( "Hello, World", 2 );
 
-        // Display the image and wait for time to display next frame.
+        // Display the image and wait for time to display the next frame.
         CNFGSwapBuffers();
     }
 }

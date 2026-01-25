@@ -3,7 +3,9 @@
 OPENVR_VERSION_TAG=$1
 
 cd third || exit
-rm -rf openvr
+if [ -e openvr ];then
+  rm -rf openvr
+fi
 git clone --no-checkout --depth=1 --filter=tree:0 https://github.com/ValveSoftware/openvr.git
 cd openvr || exit
 git sparse-checkout set --no-cone /bin /headers /lib
